@@ -5,22 +5,33 @@ function calculate() {
 
     var birthday = {
         date: input.getDate(),
-        month: input.getMonth(),
+        month: input.getMonth() + 1,
         year: input.getFullYear()
     }
-
-
     var tdate = today.getDate()
-    var tmonth = today.getMonth()
+    var tmonth = today.getMonth() + 1
     var tyear = today.getFullYear()
 
+    var ageyear, agemonth, agedate;
 
-    var ageyear = tyear - birthday.year;
-    var agemonth = tmonth - birthday.month;
-    var agedate = tdate - birthday.date;
+    if (tyear >= birthday.year) {
+        ageyear = tyear - birthday.year;
+    }
+
+    if (birthday.month > tmonth) {
+        ageyear--
+        agemonth = ((tyear - 2000) - birthday.month) - tmonth;
+
+    } else {
+        agemonth = tmonth - birthday.month;
+    }
+
+    if (birthday.date > tdate) {
+        //conditions to be written
+    } else
+        agedate = tdate - birthday.date;
 
     if (birthday.year > tyear) {
-
         alert("Date of Birth should not be greater than current Year")
 
     } else {
