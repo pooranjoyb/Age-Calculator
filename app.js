@@ -16,12 +16,16 @@ function calculate() {
 
 
     //Alert Conditions
-    if (birthday.year > tyear)
+    if (birthday.year > tyear) {
+
         alert("Date of Birth should not be greater than current Year")
-    else if (birthday.year == tyear && birthday.month == tmonth && birthday.date >= tdate) {
+        document.getElementById("agebox").value = "ERROR";
+    } else if (birthday.year == tyear && birthday.month == tmonth && birthday.date >= tdate) {
         alert("Date should not be greater or equal than currrent date for current month")
+        document.getElementById("agebox").value = "ERROR";
     } else
-        console.log("SUCCESS");
+        document.getElementById("agebox").value = "ERROR";
+
     //logic for Year
 
     ageyear = tyear - birthday.year;
