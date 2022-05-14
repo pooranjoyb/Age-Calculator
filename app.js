@@ -42,10 +42,13 @@ function calculate() {
 
     //Logic for Date
     if (birthday.date > tdate && birthday.month > tmonth) {
-        agedate = ((tdate + 28) - birthday.date);
+
+        agedate = (((tdate + 31) - 1) - birthday.date);
+
     } else if (birthday.date > tdate && birthday.month < tmonth) {
+
         agemonth--;
-        agedate = ((tdate + 28) - birthday.date);
+        agedate = (((tdate + 31) - 1) - birthday.date);
 
     } else
         agedate = tdate - birthday.date;
