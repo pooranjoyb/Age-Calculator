@@ -2,6 +2,11 @@
   
 # Age-Calculator
   </div>
+  
+![Unable to load image file](https://github.com/pooranjoyb/Age-Calculator/blob/master/sample.png?raw=true)
+
+---
+
 <div align="center"><h3>
 This is a Web-App created using Bootstrap and Javascript</h3>
 </div>
@@ -10,6 +15,8 @@ Age calculator is an online tool with which you can find out your age using your
 ---
 
 <h2 align="center"><b>How to access this project ?</b></h2>
+
+ **Using the link** ***https://pooranjoyb.github.io/Age-Calculator/***
  
  **Using Gitbash to clone**
 
