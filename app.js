@@ -12,7 +12,7 @@ function calculate() {
     var tmonth = today.getMonth() + 1
     var tyear = today.getFullYear()
 
-    var ageyear, agemonth, agedate, ageweek = 0;
+    var ageyear, agemonth, agedate;
 
 
     //Alert Conditions
@@ -57,50 +57,30 @@ function calculate() {
     } else
         agedate = tdate - birthday.date;
 
-    //Logic for weeks
-    ageweek = Math.trunc(agedate / 7);
-    agedate = agedate % 7;
 
     //Output
     if (isNaN(agedate) == 1 || isNaN(agemonth) == 1 || isNaN(ageyear) == 1) {
         alert("Enter your Birthday in mm/dd/yyyy format ")
 
     } else if (ageyear == 0 && agemonth == 0) {
-        if (ageweek == 1) {
 
-            document.getElementById("agebox").value = ageweek + " week and " + agedate + " days old";
-        } else {
-
-            document.getElementById("agebox").value = ageweek + " weeks and " + agedate + " days old";
-
-        }
     } else if (agemonth == 0) {
 
-        document.getElementById("agebox").value = ageyear + " Years " + ageweek + " weeks and " + agedate + " days old";
-    } else if (ageweek == 0) {
-
-        document.getElementById("agebox").value = ageyear + " Years " + agemonth + " months and " + agedate + " days old";
+        document.getElementById("agebox").value = ageyear + " Years and" + agedate + "days old";
     } else if (agedate == 0) {
 
-        document.getElementById("agebox").value = ageyear + " Years " + agemonth + " months " + ageweek + " weeks old";
-    } else if (agemonth == 1 && ageweek == 1 && agedate == 1) {
-
-        document.getElementById("agebox").value = agemonth + " month " + ageweek + " week and " + agedate + " day old";
+        document.getElementById("agebox").value = ageyear + " Years and" + agemonth + " months old";
     } else if (agemonth == 1 && agedate == 1) {
 
-        document.getElementById("agebox").value = agemonth + " month " + ageweek + " weeks and " + agedate + " day old";
+        document.getElementById("agebox").value = agemonth + " month and" + agedate + " day old";
+    } else if (agedate == 1) {
+        document.getElementById("agebox").value = agemonth + " months " + agedate + " day old";
 
-    } else if (ageweek == 1 && agedate == 1) {
-        document.getElementById("agebox").value = agemonth + " months " + ageweek + " week and " + agedate + " day old";
-
-    } else if (ageweek == 1) {
-
-        document.getElementById("agebox").value = ageyear + " Years " + agemonth + " months " + ageweek + " week and " + agedate + " days old";
     } else if (agedate == 1) {
 
-        document.getElementById("agebox").value = ageyear + " Years " + agemonth + " months " + ageweek + " weeks and " + agedate + " day old";
+        document.getElementById("agebox").value = ageyear + " Years " + agemonth + " months " + agedate + " day old";
     } else {
 
-        document.getElementById("agebox").value = ageyear + " Years " + agemonth + " months " + ageweek + " weeks and " + agedate + " days old";
+        document.getElementById("agebox").value = ageyear + " Years " + agemonth + " months " + agedate + " days old";
     }
 }

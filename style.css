@@ -27,6 +27,11 @@ div small {
     transition: all 0.1s ease-out;
 }
 
+a {
+    text-decoration: none;
+    color: #000000;
+}
+
 #footer {
     margin-top: 26px;
 }
