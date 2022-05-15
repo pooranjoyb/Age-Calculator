@@ -6,11 +6,23 @@
 ![Unable to load image file](https://github.com/pooranjoyb/Age-Calculator/blob/master/sample.png?raw=true)
 
 ---
+<div align="center">
+  
+## Handset samples
+
+  ![Unable to load image file](https://github.com/pooranjoyb/Age-Calculator/blob/master/sample-phone.jpeg?raw=true)
+  
+  </div>
+
+--- 
 
 <div align="center"><h3>
-This is a Web-App created using Bootstrap and Javascript</h3>
+OVERVIEW</h3>
 </div>
-Age calculator is an online tool with which you can find out your age using your date of birth and the current date. The tool helps to find out the difference in time between two dates. The ressult is displayed in years, months and days. The results are also not affected by the time zone of a person since the tool just tells you the difference in time. The age calculator is based on the common age system, therefore it can be used by everyone.
+
+- Age calculator is an online tool with which you can find out your age using your date of birth and the current date. 
+- The tool helps to find out the difference in time between two dates. The result is displayed in years, months and days. The results are also not affected by the time zone of a person since the tool just tells you the difference in time. 
+- The age calculator is based on the common age system, therefore it can be used by everyone.
 
 ---
 
