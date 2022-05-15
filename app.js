@@ -66,13 +66,13 @@ function calculate() {
 
     } else if (agemonth == 0) {
 
-        document.getElementById("agebox").value = ageyear + " Years and" + agedate + "days old";
+        document.getElementById("agebox").value = ageyear + " Years and " + agedate + "days old";
     } else if (agedate == 0) {
 
-        document.getElementById("agebox").value = ageyear + " Years and" + agemonth + " months old";
+        document.getElementById("agebox").value = ageyear + " Years and " + agemonth + " months old";
     } else if (agemonth == 1 && agedate == 1) {
 
-        document.getElementById("agebox").value = agemonth + " month and" + agedate + " day old";
+        document.getElementById("agebox").value = agemonth + " month and " + agedate + " day old";
     } else if (agedate == 1) {
         document.getElementById("agebox").value = agemonth + " months " + agedate + " day old";
 
@@ -81,6 +81,6 @@ function calculate() {
         document.getElementById("agebox").value = ageyear + " Years " + agemonth + " months " + agedate + " day old";
     } else {
 
-        document.getElementById("agebox").value = ageyear + " Years " + agemonth + " months " + agedate + " days old";
+        document.getElementById("agebox").value = ageyear + " Years " + agemonth + " months and " + agedate + " days old";
     }
 }
