@@ -20,11 +20,13 @@ function calculate() {
 
         alert("Date of Birth should not be greater than current Year")
         document.getElementById("agebox").value = "ERROR";
+        console.log("Age Calculation Failure");
     } else if (birthday.year == tyear && birthday.month == tmonth && birthday.date >= tdate) {
         alert("Date should not be greater or equal than currrent date for current month")
         document.getElementById("agebox").value = "ERROR";
+        console.log("Age Calculation Failure");
     } else
-        document.getElementById("agebox").value = "ERROR";
+        console.log("Age Calculation Success");
 
     //logic for Year
 
@@ -63,7 +65,14 @@ function calculate() {
         alert("Enter your Birthday in mm/dd/yyyy format ")
 
     } else if (ageyear == 0 && agemonth == 0) {
+        if (agedate < 0) {
 
+            document.getElementById("agebox").value = "ERROR";
+        } else
+            document.getElementById("agebox").value = agedate + " days old";
+    } else if (ageyear == 0) {
+
+        document.getElementById("agebox").value = agemonth + " months and " + agedate + " days old";
     } else if (agemonth == 0) {
 
         document.getElementById("agebox").value = ageyear + " Years and " + agedate + "days old";
