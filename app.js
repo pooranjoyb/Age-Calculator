@@ -16,13 +16,13 @@ function calculate() {
 
 
     //Alert Conditions
-    if (birthday.year > tyear) {
+    if (birthday.year > tyear || (birthday.year == tyear && birthday.month > tmonth)) {
 
-        alert("Date of Birth should not be greater than current Year")
+        alert("Date of Birth should not be greater than current Year or current month")
         document.getElementById("agebox").value = "ERROR";
         console.log("Age Calculation Failure");
     } else if (birthday.year == tyear && birthday.month == tmonth && birthday.date >= tdate) {
-        alert("Date should not be greater or equal than currrent date for current month")
+        alert("Date should not be greater or equal than currrent date")
         document.getElementById("agebox").value = "ERROR";
         console.log("Age Calculation Failure");
     } else
@@ -32,9 +32,14 @@ function calculate() {
 
     ageyear = tyear - birthday.year;
 
+    //logic if bday is in same month
+    if (birthday.month == tmonth && birthday.date == tdate) {
+
+        ageyear = tyear - birthday.year;
+    }
 
     //Logic for Month
-    if (birthday.month > tmonth && birthday.date > tdate) {
+    if ((birthday.month > tmonth && birthday.date > tdate) || birthday.month == tmonth) {
         ageyear--
         agemonth = (((tmonth + 12) - 1) - birthday.month);
 
@@ -47,7 +52,7 @@ function calculate() {
     }
 
     //Logic for Date
-    if (birthday.date > tdate && birthday.month > tmonth) {
+    if ((birthday.date > tdate && birthday.month > tmonth) || birthday.month == tmonth) {
 
         agedate = (((tdate + 31) - 1) - birthday.date);
 
@@ -73,13 +78,19 @@ function calculate() {
     } else if (ageyear == 0) {
 
         document.getElementById("agebox").value = agemonth + " months and " + agedate + " days old";
+    } else if (agedate == 0 && agemonth == 0) {
+
+        document.getElementById("agebox").value = ageyear + " Years old ";
+    } else if (agemonth == 0) {
+
+        document.getElementById("agebox").value = ageyear + " Years and " + agedate + " days old";
     } else if (agedate == 0) {
 
         document.getElementById("agebox").value = ageyear + " Years and " + agemonth + " months old";
     } else if (agemonth == 1 && agedate == 1) {
 
-        document.getElementById("agebox").value = agemonth + " month and " + agedate + " day old";
-    } else if (agedate == 1) {
+        document.getElementById("agebox").value = ageyear + " Years " + agemonth + " month and " + agedate + " day old";
+    } else if (agedate == 1 && ageyear == 0) {
         document.getElementById("agebox").value = agemonth + " months " + agedate + " day old";
 
     } else if (agedate == 1) {
