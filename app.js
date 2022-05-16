@@ -73,9 +73,6 @@ function calculate() {
     } else if (ageyear == 0) {
 
         document.getElementById("agebox").value = agemonth + " months and " + agedate + " days old";
-    } else if (agemonth == 0) {
-
-        document.getElementById("agebox").value = ageyear + " Years and " + agedate + "days old";
     } else if (agedate == 0) {
 
         document.getElementById("agebox").value = ageyear + " Years and " + agemonth + " months old";
