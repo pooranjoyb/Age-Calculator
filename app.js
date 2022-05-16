@@ -39,7 +39,7 @@ function calculate() {
     }
 
     //Logic for Month
-    if ((birthday.month > tmonth && birthday.date > tdate) || birthday.month == tmonth) {
+    if (birthday.month >= tmonth && birthday.date > tdate) {
         ageyear--
         agemonth = (((tmonth + 12) - 1) - birthday.month);
 
@@ -52,7 +52,7 @@ function calculate() {
     }
 
     //Logic for Date
-    if ((birthday.date > tdate && birthday.month > tmonth) || birthday.month == tmonth) {
+    if (birthday.date > tdate && birthday.month >= tmonth) {
 
         agedate = (((tdate + 31) - 1) - birthday.date);
 
