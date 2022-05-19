@@ -12,7 +12,7 @@ function calculate() {
     var tmonth = today.getMonth() + 1
     var tyear = today.getFullYear()
 
-    var ageyear, agemonth, agedate;
+    var ageyear, agemonth, agedate, flag;
 
 
     //Alert Conditions
@@ -21,9 +21,11 @@ function calculate() {
         alert("Date of Birth should not be greater than current Year or current month")
         document.getElementById("agebox").value = "ERROR";
         console.log("Age Calculation Failure");
+        flag = 1;
     } else if (birthday.year == tyear && birthday.month == tmonth && birthday.date >= tdate) {
         alert("Date should not be greater or equal than currrent date")
         document.getElementById("agebox").value = "ERROR";
+        flag = 1;
         console.log("Age Calculation Failure");
     } else
         console.log("Age Calculation Success");
@@ -66,38 +68,41 @@ function calculate() {
 
 
     //Output
-    if (isNaN(agedate) == 1 || isNaN(agemonth) == 1 || isNaN(ageyear) == 1) {
-        alert("Enter your Birthday in mm/dd/yyyy format ")
+    if (flag != 1) {
 
-    } else if (ageyear == 0 && agemonth == 0) {
-        if (agedate < 0) {
+        if (isNaN(agedate) == 1 || isNaN(agemonth) == 1 || isNaN(ageyear) == 1) {
+            alert("Enter your Birthday in mm/dd/yyyy format ")
 
-            document.getElementById("agebox").value = "ERROR";
-        } else
-            document.getElementById("agebox").value = agedate + " days old";
-    } else if (ageyear == 0) {
+        } else if (ageyear == 0 && agemonth == 0) {
+            if (agedate < 0) {
 
-        document.getElementById("agebox").value = agemonth + " months and " + agedate + " days old";
-    } else if (agedate == 0 && agemonth == 0) {
+                document.getElementById("agebox").value = "ERROR";
+            } else
+                document.getElementById("agebox").value = agedate + " days old";
+        } else if (ageyear == 0) {
 
-        document.getElementById("agebox").value = ageyear + " Years old ";
-    } else if (agemonth == 0) {
+            document.getElementById("agebox").value = agemonth + " months and " + agedate + " days old";
+        } else if (agedate == 0 && agemonth == 0) {
 
-        document.getElementById("agebox").value = ageyear + " Years and " + agedate + " days old";
-    } else if (agedate == 0) {
+            document.getElementById("agebox").value = ageyear + " Years old ";
+        } else if (agemonth == 0) {
 
-        document.getElementById("agebox").value = ageyear + " Years and " + agemonth + " months old";
-    } else if (agemonth == 1 && agedate == 1) {
+            document.getElementById("agebox").value = ageyear + " Years and " + agedate + " days old";
+        } else if (agedate == 0) {
 
-        document.getElementById("agebox").value = ageyear + " Years " + agemonth + " month and " + agedate + " day old";
-    } else if (agedate == 1 && ageyear == 0) {
-        document.getElementById("agebox").value = agemonth + " months " + agedate + " day old";
+            document.getElementById("agebox").value = ageyear + " Years and " + agemonth + " months old";
+        } else if (agemonth == 1 && agedate == 1) {
 
-    } else if (agedate == 1) {
+            document.getElementById("agebox").value = ageyear + " Years " + agemonth + " month and " + agedate + " day old";
+        } else if (agedate == 1 && ageyear == 0) {
+            document.getElementById("agebox").value = agemonth + " months " + agedate + " day old";
 
-        document.getElementById("agebox").value = ageyear + " Years " + agemonth + " months " + agedate + " day old";
-    } else {
+        } else if (agedate == 1) {
 
-        document.getElementById("agebox").value = ageyear + " Years " + agemonth + " months and " + agedate + " days old";
+            document.getElementById("agebox").value = ageyear + " Years " + agemonth + " months " + agedate + " day old";
+        } else {
+
+            document.getElementById("agebox").value = ageyear + " Years " + agemonth + " months and " + agedate + " days old";
+        }
     }
 }
