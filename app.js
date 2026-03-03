@@ -1,3 +1,4 @@
+
 function calculate() {
 
     var input = new Date(document.getElementById("inputDate").value);
